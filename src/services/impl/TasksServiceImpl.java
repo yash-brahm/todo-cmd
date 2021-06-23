@@ -10,12 +10,23 @@ public class TasksServiceImpl implements TasksService {
 
     @Override
     public Tasks getTasksById(List<Tasks> tasksList, int id) {
+
+        for (int i = 0; i <= tasksList.size(); i++) {
+
+            Tasks currentTask;
+            currentTask = tasksList.get(i);
+
+            if (currentTask.getId() == id) {
+                return currentTask;
+            }
+        }
         return null;
     }
 
     @Override
     public List<Tasks> addTasks(List<Tasks> tasksList, Tasks task) {
-        return null;
+        tasksList.add(task);
+        return tasksList;
     }
 
     @Override
