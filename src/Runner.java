@@ -1,3 +1,8 @@
+import models.Tasks;
+import services.impl.TasksServiceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Runner {
@@ -5,6 +10,8 @@ public class Runner {
 
         Scanner sc = new Scanner(System.in);
         int choice = 0;
+        List <Tasks> database = new ArrayList<>();
+        Tasks t = new Tasks();
 
         while (choice != 5) {
             System.out.println("---------------- Welcome to your TODO list ----------------");
@@ -15,7 +22,9 @@ public class Runner {
             switch (choice) {
 
                 case 1:
-                    // addTasks(null);
+                     TasksServiceImpl tasksService = new TasksServiceImpl();
+                    database = tasksService.addTasks(database, t);
+
                     break;
 
                 case 2:
