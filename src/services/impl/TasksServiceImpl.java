@@ -6,7 +6,6 @@ import services.TasksService;
 import java.util.List;
 
 public class TasksServiceImpl implements TasksService {
-    // TODO implement abstract methods
 
     @Override
     public Tasks getTasksById(List<Tasks> tasksList, int id) {
@@ -52,5 +51,12 @@ public class TasksServiceImpl implements TasksService {
 
         tasksList.remove(task);
         return tasksList;
+    }
+
+    @Override
+    public void printAllTasks(List<Tasks> tasksList) {
+        for (Tasks t : tasksList) {
+            System.out.println(t);
+        }
     }
 }

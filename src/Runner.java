@@ -11,7 +11,7 @@ public class Runner {
         Scanner sc = new Scanner(System.in);
         int choice = 0;
         List <Tasks> database = new ArrayList<>();
-        Tasks t = new Tasks();
+        TasksServiceImpl tasksService = new TasksServiceImpl();
 
         while (choice != 5) {
             System.out.println("---------------- Welcome to your TODO list ----------------");
@@ -22,21 +22,23 @@ public class Runner {
             switch (choice) {
 
                 case 1:
-                     TasksServiceImpl tasksService = new TasksServiceImpl();
-                    database = tasksService.addTasks(database, t);
+                    System.out.print("What's on your mind? -> ");
+                    // TODO get user input and add it to database
 
+                    System.out.println("Task has been added. Total tasks: " + database.size());
                     break;
 
                 case 2:
-                    // getTasksbyId(1);
+                    System.out.print("Enter Task Id: -> ");
+                    // TODO print the task which user wants
                     break;
 
                 case 3:
-                    // updateTasks(null);
+                    // TODO Ask user to update title for now and print updated tasks at the end
                     break;
 
                 case 4:
-                    // deleteTasks(null);
+                    // TODO Delete the task, and show the total count
                     break;
 
                 default:

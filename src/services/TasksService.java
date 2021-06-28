@@ -9,4 +9,5 @@ public interface TasksService {
     public List<Tasks> addTasks(List<Tasks> tasksList, Tasks task);
     public List<Tasks> updateTasks(List<Tasks> tasksList, Tasks task);
     public List<Tasks> deleteTasks(List<Tasks> tasksList, Tasks task);
+    public void printAllTasks(List<Tasks> tasksList);
 }

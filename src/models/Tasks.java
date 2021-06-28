@@ -17,6 +17,11 @@ public class Tasks {
         this.id = getNextId();
     }
 
+    public Tasks(String title) {
+        this.id = getNextId();
+        this.title = title;
+    }
+
     public Tasks(String title, String notes, Date dueDate, Priority priority, String tags) {
         this.id = getNextId();
         this.title = title;
@@ -30,7 +35,7 @@ public class Tasks {
         return id;
     }
 
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 
@@ -76,5 +81,17 @@ public class Tasks {
 
     private int getNextId() {
         return nextId++;
+    }
+
+    @Override
+    public String toString() {
+        return "Tasks{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", notes='" + notes + '\'' +
+                ", dueDate=" + dueDate +
+                ", priority=" + priority +
+                ", tags='" + tags + '\'' +
+                '}';
     }
 }
