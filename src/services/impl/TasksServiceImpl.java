@@ -31,11 +31,26 @@ public class TasksServiceImpl implements TasksService {
 
     @Override
     public List<Tasks> updateTasks(List<Tasks> tasksList, Tasks task) {
+
+        for (int i = 0; i <= tasksList.size(); i++) {
+
+            Tasks oldTask = tasksList.get(i);
+            if (oldTask.getId() == task.getId())
+            {
+                oldTask.setTitle(task.getTitle());
+                oldTask.setNotes(task.getNotes());
+                oldTask.setDueDate(task.getDueDate());
+                oldTask.setTags(task.getTags());
+            }
+            return tasksList;
+        }
         return null;
     }
-
+    
     @Override
     public List<Tasks> deleteTasks(List<Tasks> tasksList, Tasks task) {
-        return null;
+
+        tasksList.remove(task);
+        return tasksList;
     }
 }
